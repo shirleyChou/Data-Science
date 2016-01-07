@@ -7,22 +7,22 @@
 #### Supervised Learning
 
 - Regression
-  - Linear regression
+  - Linear regression                                                
   - Tree-based regression
     - CART
-  - SVM
+  - Support Vector Machine                                    SVM                                  
 - Classification
-  - Logistic regression
+  - Logistic regression                                              LR                   
   - SVM
-  - k-Nearest Neighbors ( KNN )
-  - [Decision Tree](http://www.analyticsvidhya.com/blog/2015/01/decision-tree-simplified/)
-  - Naïve Bayes
+  - k-Nearest Neighbors                                          KNN
+  - [Decision Tree](http://www.analyticsvidhya.com/blog/2015/01/decision-tree-simplified/)                                                       DT
+  - Naïve Bayes                                                         NB
   - Gradient Boost & AdaBoost
 
 #### Unsupervised Learning
 
 - Clustering
-  - K-means
+  - K-means clustering                                            k-means
   - Apriori algorithm
   - FP-Tree
 - Principal Components Analysis ( PCA )
