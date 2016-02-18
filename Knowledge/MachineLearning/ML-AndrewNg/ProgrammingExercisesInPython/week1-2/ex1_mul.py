@@ -11,27 +11,43 @@ def load_data():
 
 def feature_normalization():
     X, y = load_data()
-    m, n = X.shape
     means = np.mean(X, axis=0)
     std = np.std(X, axis=0)
     x_normal = (X - means) / std
-    return x_normal
+    return x_normal, y
 
 
-def cost_function():
-    x_normal = feature_normalization()
+def hypothesis(x, theta):
+    return x.dot(theta)
 
+def cost_function(x, y, theta):
+    m = x.shape[0]
+    h_x = hypothesis(x, theta)
+    j_of_theta = (h_x - y).T.dot(h_x - y) / (2 * m)
+    return j_of_theta
+
+
+def gradient_descent_multi(x, y, theta, alpha, num_iters):
+    h_x = hypothesis(x, theta)
+    
+
+
+
+def part_1():
+    x_normal, y = feature_normalization()
     m, n = x_normal.shape
-    theta_initial =
-    j_of_theta = () / (2 * m)
+    x = np.ones((m, n+1))
+    x[:, 1:] = x_normal
+    initial_theta = np.ones((n+1, 1))
+    alpha = 0.01
+    num_iters = 400
 
-
-def gradient_descent():
-    pass
+    cost = cost_function(x, y.reshape((m, 1)), initial_theta)
+    grad = gradient_descent_multi(x, y, initial_theta, alpha, num_iters)
 
 
 def main():
-    feature_normalization()
+    part_1()
 
 
 if __name__ == '__main__':
