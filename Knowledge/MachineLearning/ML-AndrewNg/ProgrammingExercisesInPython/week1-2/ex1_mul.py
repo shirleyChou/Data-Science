@@ -18,7 +18,8 @@ def feature_normalization():
 
 
 def hypothesis(x, theta):
-    return x.dot(theta)
+    return x.dot(theta.T)
+
 
 def cost_function(x, y, theta):
     m = x.shape[0]
@@ -28,22 +29,25 @@ def cost_function(x, y, theta):
 
 
 def gradient_descent_multi(x, y, theta, alpha, num_iters):
-    h_x = hypothesis(x, theta)
-    
+    m = x.shape[0]
+    grad = theta
+    print grad
 
+    for i in range(num_iters):
+        h_x = hypothesis(x, grad)
+        grad = grad - alpha * np.sum((h_x - y) * x, axis=0) / m
+
+    return grad
 
 
 def part_1():
-    x_normal, y = feature_normalization()
-    m, n = x_normal.shape
-    x = np.ones((m, n+1))
-    x[:, 1:] = x_normal
-    initial_theta = np.ones((n+1, 1))
+    x, y = load_data()
+    m, n = x.shape
     alpha = 0.01
     num_iters = 400
+    init_theta = np.ones((1, n+1))
 
-    cost = cost_function(x, y.reshape((m, 1)), initial_theta)
-    grad = gradient_descent_multi(x, y, initial_theta, alpha, num_iters)
+    gradient_descent_multi(x, y.reshape((m, 1)), init_theta, alpha, num_iters)
 
 
 def main():
