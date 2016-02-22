@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 import numpy as np
-
+from matplotlib import pyplot as plt
 
 def load_data():
     data = np.genfromtxt("ex1data2.txt", delimiter=",")
@@ -9,49 +9,96 @@ def load_data():
     return X, y
 
 
-def feature_normalization():
-    X, y = load_data()
-    means = np.mean(X, axis=0)
-    std = np.std(X, axis=0)
-    x_normal = (X - means) / std
-    return x_normal, y
+def feature_normalization(x):
+    means = np.mean(x, axis=0)
+    std = np.std(x, axis=0)
+    x_normal = (x - means) / std
+    return means, std, x_normal,
 
 
 def hypothesis(x, theta):
     return x.dot(theta.T)
 
 
-def cost_function(x, y, theta):
-    m = x.shape[0]
+def compute_cost(x, y, theta, m):
     h_x = hypothesis(x, theta)
     j_of_theta = (h_x - y).T.dot(h_x - y) / (2 * m)
-    return j_of_theta
+    return j_of_theta[0]
 
 
-def gradient_descent_multi(x, y, theta, alpha, num_iters):
-    m = x.shape[0]
+def gradient_descent_multi(x, y, theta, alpha, iterations, m):
     grad = theta
-    print grad
+    j_of_theta = []
 
-    for i in range(num_iters):
+    for i in xrange(iterations):
+        j = compute_cost(x, y, grad, m)
+        j_of_theta.append(j)
         h_x = hypothesis(x, grad)
-        grad = grad - alpha * np.sum((h_x - y) * x, axis=0) / m
+        grad = grad - alpha / m * np.sum((h_x - y) * x, axis=0)
+    return j_of_theta, grad
 
-    return grad
+
+def normal_equation(x, y):
+    theta = np.linalg.inv(x.T.dot(x)).dot(x.T).dot(y)
+    return theta
 
 
-def part_1():
+def part3_1():
     x, y = load_data()
-    m, n = x.shape
-    alpha = 0.01
-    num_iters = 400
+    mu, std, x_normal = feature_normalization(x)
+    print mu, std
+
+
+def part3_2():
+    x, y = load_data()
+    mu, std, x_normal = feature_normalization(x)
+    m, n = x_normal.shape
+    x = np.ones((m, n+1))
+    x[:, 1:] = x_normal
+    y = y.reshape((m, 1))
+
+    alphas = [0.01, 0.03, 0.1, 0.3, 1.0]
+    iterations = 400
     init_theta = np.ones((1, n+1))
 
-    gradient_descent_multi(x, y.reshape((m, 1)), init_theta, alpha, num_iters)
+    for alpha in alphas:
+        j_of_theta, theta = gradient_descent_multi(x, y, init_theta,
+                                                   alpha, iterations, m)
+        print "Theta computed from gradient descent:\n %s" % theta
+        plt.plot(range(iterations), j_of_theta, '-b')
+        plt.title("Alpha = %s" % alpha)
+        plt.xlabel("Number of iterations")
+        plt.ylabel("Cost J")
+        plt.show(block=True)
+
+        new = np.array([1.0, 1650.0, 3.0])
+        new_normal = (new - mu) / std
+        result = hypothesis(new_normal, theta)
+        print ("Predicted price of a 1650 sq-ft, 3 br house "
+               "(using gradient descent):\n %s" % result)
+
+
+def part3_3():
+    x_raw, y = load_data()
+    m, n = x_raw.shape
+    x = np.ones((m, n+1))
+    x[:, 1:] = x_raw
+    y = y.reshape((m, 1))
+
+    print "Solving with normal equations..."
+    theta = normal_equation(x, y)
+    print "Theta computed from the normal equations:\n %s" % theta
+
+    new = np.array([1.0, 1650.0, 3.0])
+    result = hypothesis(new, theta.T)
+    print ("Predicted price of a 1650 sq-ft, 3 br house "
+               "(using normal equations):\n %s" % result)
 
 
 def main():
-    part_1()
+    # part3_1()
+    # part3_2()
+    part3_3()
 
 
 if __name__ == '__main__':

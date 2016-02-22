@@ -26,7 +26,9 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-
+mu = mean(X);       %  mean value 
+sigma = std(X);     %  standard deviation
+X_norm  = (X - repmat(mu,size(X,1),1)) ./  repmat(sigma,size(X,1),1);
 
 
 
