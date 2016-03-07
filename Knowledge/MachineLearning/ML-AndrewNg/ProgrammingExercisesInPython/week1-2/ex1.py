@@ -101,10 +101,10 @@ def part2_4():
     R, P = np.meshgrid(theta0_vals, theta1_vals)
 
     # fig = plt.figure()
-    # ax 	= fig.gca()
+    # ax = fig.gca()
     # ax.contourf(R, P, j_vals)
     # plt.show(block=True)
-
+    #
     # plt.contourf(R, P, j_vals.T, np.logspace(-2, 3, 20))
     # plt.plot(t[0], t[1], 'rx', markersize = 10)
     # plt.show(block=True)
@@ -116,7 +116,7 @@ def main():
     part1()
     part2_1()
     part2_2()
-    part2_4()
+    # part2_4() not finished
 
 if __name__ == '__main__':
     main()
