@@ -71,9 +71,11 @@ def part3_2():
         plt.ylabel("Cost J")
         plt.show(block=True)
 
-        new = np.array([1.0, 1650.0, 3.0])
+        new = np.array([1650.0, 3.0])
         new_normal = (new - mu) / std
-        result = hypothesis(new_normal, theta)
+        new_add = np.ones((1, 3))
+        new_add[:, 1:] = new_normal
+        result = hypothesis(new_add, theta)
         print ("Predicted price of a 1650 sq-ft, 3 br house "
                "(using gradient descent):\n %s" % result)
 
