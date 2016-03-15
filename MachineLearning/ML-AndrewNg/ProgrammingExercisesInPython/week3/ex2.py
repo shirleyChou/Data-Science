@@ -64,8 +64,8 @@ def part_3():
 
 
 def main():
-    # part_1()
-    part_2()
+    part_1()
+    # part_2()
 
 
 if __name__ == '__main__':
