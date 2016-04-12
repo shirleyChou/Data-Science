@@ -8,24 +8,22 @@
     - Linear regression                                                
     - Tree-based regression
         - CART    
-    - Ensemble learning: [stanford week7](http://statweb.stanford.edu/~jtaylo/courses/stats202/index.html), [scikit-learn](http://scikit-learn.org/stable/modules/ensemble.html), [CMU Leature11](http://www.cs.cmu.edu/~epxing/Class/10701/lecture.html)
+    - Ensemble learning: [stanford week7](http://statweb.stanford.edu/~jtaylo/courses/stats202/index.html), [scikit-learn](http://scikit-learn.org/stable/modules/ensemble.html), [CMU Leature11](http://www.cs.cmu.edu/~epxing/Class/10701/lecture.html), [Kaggle-guide](http://mlwave.com/kaggle-ensembling-guide/)
         - Support Vector Machine (SVMs)
               - Learning: [CMU Leature8-9](http://www.cs.cmu.edu/~epxing/Class/10701/lecture.html)
-        - [Random Forest](http://scikitlearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
-        - Averaging methods: Random Forests
+        - Averaging methods: Random Forest
+              - Learning: [stanford week7](http://statweb.stanford.edu/~jtaylo/courses/stats202/index.html), [Coursera](https://class.coursera.org/datasci-001/lecture/159), [Youtube](https://www.youtube.com/watch?v=3kYujfDgmNk), [Kaggle](https://www.kaggle.com/c/the-analytics-edge-mit-15-071x/forums/t/8082/reading-and-interpreting-random-forest-models)
         - Boosting: Gradient Boost & AdaBoost
 
 - Classification
     - Logistic regression (LR)     
          - Learning: [CMU Leature6](http://www.cs.cmu.edu/~epxing/Class/10701/lecture.html)              
     - k-Nearest Neighbors (KNN)
-         - Learning: [CMU Leature2](http://www.cs.cmu.edu/~epxing/Class/10701/lecture.html)
+         - Learning: [CMU Leature2](http://www.cs.cmu.edu/~epxing/Class/10701/lecture.html), [stanford week6](http://statweb.stanford.edu/~jtaylo/courses/stats202/index.html)
     - Decision Tree  
          - Learning: [CMU Leature3](http://www.cs.cmu.edu/~epxing/Class/10701/lecture.html), [stanford week4](http://statweb.stanford.edu/~jtaylo/courses/stats202/index.html)
     - Naïve Bayes(NB)
          - Learning: [CMU Leature4](http://www.cs.cmu.edu/~epxing/Class/10701/lecture.html), [stanford week6](http://statweb.stanford.edu/~jtaylo/courses/stats202/index.html)
-    - Nearest Neighbour
-         - Learning: [stanford week6](http://statweb.stanford.edu/~jtaylo/courses/stats202/index.html)
     - Perceptron, Neural networks
          - Learning: [CMU Leature7](http://www.cs.cmu.edu/~epxing/Class/10701/lecture.html)
 
@@ -70,8 +68,3 @@ C4.5算法是机器学习算法中的一种分类决策树算法,其核心算法
 #### PageRank
 
  [PageRank](http://blog.csdn.net/aladdina/archive/2009/05/01/4141120.aspx)
-
-
-
-
-
