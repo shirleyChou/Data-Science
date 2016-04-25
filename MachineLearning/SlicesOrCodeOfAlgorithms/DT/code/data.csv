@@ -1,0 +1,16 @@
+Age,Job,House,Credit,label
+Young,N,N,Fair,N
+Young,N,N,Good,N
+Young,Y,N,Good,Y
+Young,Y,Y,Fair,Y
+Young,N,N,Fair,N
+Middle,N,N,Fair,N
+Middle,N,N,Good,N
+Middle,Y,Y,Good,Y
+Middle,N,Y,Very Good,Y
+Middle,N,Y,Very Good,Y
+Old,N,Y,Very Good,Y
+Old,N,Y,Good,Y
+Old,Y,N,Good,Y
+Old,Y,N,Very Good,Y
+Old,N,N,Fair,N
