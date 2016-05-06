@@ -1,3 +1,8 @@
+# Lecture 1: Intro to ML Decision Trees
+* Machine learning examples
+* Well defined machine learning problem
+* Decision tree learning
+
 ## What is Machine Learning:
 * Study of algorithms that
 * improve their performance P 
@@ -49,6 +54,3 @@ Using entropy. Entropy measures the **impurity** of S(a sample of training examp
 ### How entropy is used
 For all features, see how much the entropy reduces(the impurity of S reduces), so it can give the most purer sub-samples.
 ![]()
-
-
-
