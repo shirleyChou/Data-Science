@@ -20,7 +20,7 @@ Machine learning already the preferred approach to
 This are applications where we have a hard time writting a program by hand
 
 ## Machine learning's interesting overlap with all kind of other simiiar fields
-![]()
+![](https://github.com/shirleyChou/Data-Science/blob/master/MachineLearning/Courses/CS601/picts/overlap.png?raw=true)
 
 ## What You’ll Learn in This Course
 * The primary Machine Learning algorithms
@@ -42,15 +42,14 @@ Decision Trees are a very expressive, hypothesis representation. That's a proper
 
 
 ### Function Approximtion of Decision Tree
-![]()
+![](https://github.com/shirleyChou/Data-Science/blob/master/MachineLearning/Courses/CS601/picts/functionApproximation.png?raw=true)
 
 ### How to decide the best attribute in each iteration?
 Using entropy. Entropy measures the **impurity** of S(a sample of training examples).
-![]()
+![](https://github.com/shirleyChou/Data-Science/blob/master/MachineLearning/Courses/CS601/picts/entropy.png?raw=true)
 
 ### Entropy is a interesting quantity for several reasons.
-![]()
+![](https://github.com/shirleyChou/Data-Science/blob/master/MachineLearning/Courses/CS601/picts/entropyQuantity.png?raw=true)
 
 ### How entropy is used
 For all features, see how much the entropy reduces(the impurity of S reduces), so it can give the most purer sub-samples.
-![]()
