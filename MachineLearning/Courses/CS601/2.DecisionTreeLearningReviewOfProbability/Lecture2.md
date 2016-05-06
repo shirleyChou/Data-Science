@@ -21,7 +21,8 @@ In the hypothesis set, each decision tree has it own set of examples that it lab
 The whole idea of the inductive inference(归纳推理) is to somehow guess the right function from the label example that we have in hand. So the issue that I want to focus on is what is the basics for genelizing from some subset of the possible examples that have been labelled for it but not all of them. That is usually the situation we are in.
 
 Part of the picture points out that are some ambiguity here. We are uncertain which hypothesis should we choose. So. **How many examples would we have to label in order to thrink the set of hypothesis that are consistent with the label examples down to one decision tree?** We can't let the program to guess a right function until we see all of the examples.
-![]()
+
+![](https://github.com/shirleyChou/Data-Science/blob/master/MachineLearning/Courses/CS601/picts/BigPictureJPG.JPG?raw=true)
 
 ##### So what do we do in machine learning to build pratically useful algorithms?
 To build an some of the additional assumptions. What is the assumptions we build for decision trees? (Shorter decision trees is preferred over long decision tree) Why that is a reasonable thing to do? 
@@ -35,19 +36,16 @@ It suggests when other thing equal we should prefer simplest hypothesis that fit
 We can sometimes get the algorithms that fit the training data very well. But doesn't do a very good job in furture training examples. It happens for several reasons. One can be just the technical coincidences in the small sample of the training examples that the algorithms happen to be given. Another it can happen becauses it has noises(wrong labelled) in the data.
 
 ### Overfitting
-![]()
+![](https://github.com/shirleyChou/Data-Science/blob/master/MachineLearning/Courses/CS601/picts/overfitting.JPG?raw=true)
 
 ### Overfitting in Decision Tree Learning
-![]()
+![](https://github.com/shirleyChou/Data-Science/blob/master/MachineLearning/Courses/CS601/picts/OverfittingInDT.JPG?raw=true)
 
 The degree of overfitting = Accuracy on training data - Accuracy on test data (Gap between two lines). So in practice when we train the decision tree we have to aware of this problem and do something about it.
 
 ### Reduced-Error Pruning
 ##### How to deal with overfitting? how to you motify the algorithms?
-Slightly more often way to do in decision tree learning in particular is what call **Reduced-Error Pruning**. The idea is to **split data into training and validation set**.
-![]()
-
-This issue of overfitting is at the heart of both machine learning practices and theory. We would actually come up with some theoretical result that tell us how we can bound that expective degree of overfitting in terms of other propertes of learner.
+Slightly more often way to do in decision tree learning in particular is what call **Reduced-Error Pruning**. The idea is to **split data into training and validation set**. This issue of overfitting is at the heart of both machine learning practices and theory. We would actually come up with some theoretical result that tell us how we can bound that expective degree of overfitting in terms of other propertes of learner.
 
 
 ## Formal Guarantees
