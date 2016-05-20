@@ -149,3 +149,4 @@ $$ \widehat{\theta}_{i}^{MAP} = \frac{(\alpha_{i}+\beta_{i}-1)}{\sum_{j=1}^{k}(\
 
 http://www.cs.cmu.edu/~tom/10701_sp11/slides/MLE_MAP_1-18-11-ann.pdf
 http://www.52nlp.cn/lda-math-%E8%AE%A4%E8%AF%86betadirichlet%E5%88%86%E5%B8%832
+http://maider.blog.sohu.com/306392863.html
