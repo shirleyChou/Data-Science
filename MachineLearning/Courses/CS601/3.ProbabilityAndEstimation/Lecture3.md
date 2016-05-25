@@ -20,9 +20,6 @@ The Chain Rule (which implies): $ P(H ∧ F) = P(H|F) P(F) $
 Two events A and B are independent if P(A ^ B) = P(A)*P(B)
 
 
-#### Conjugate prior(共轭先验)
-In **Bayesian probability theory**, $ P(\theta) $ is the conjugate prior for likelihood function $ P(data|\theta) $ if the forms of  $ P(\theta) $ and $ P(\theta | data) $ are the same. 
-
 #### Bernoulli distribution(伯努利分布)
 伯努利试验(Bernoulli experiment)是在**同样的条件下**(每一次试验的结果不会受其它实验结果的影响)重复地、相互独立地进行的一种随机试验。其特点是该随机试验只有两种可能结果：发生或者不发生。然后我们假设该项试验独立重复地进行了n次，那么我们就称这一系列重复独立的随机试验为n重伯努利试验，或称为伯努利概型。
 又名0-1分布。随机变量只有两类取值。两类取值的概率不等。    
@@ -85,7 +82,7 @@ So that's the **key idea** in the lecture, joint probability distribution are ab
 ## Estimating probability Distributions
 ### Principles for Estimating Probabilities
 #### Principle1: Maximum likehood Estimation(MLE) - 最大似然估计
-MLE: Choose parameters $ \theta $ that maximizes $ P(data|\theta) $.  
+MLE: Choose parameters $ \theta $ that maximizes $ P(data|\theta) $ (probability of observed data D).  
 $ P(D|\theta) $ is called **data likelihood**. 
 $$ \widehat{\theta} = arg \underset{\theta}{max}P(D | \theta) $$  
 $ \ln P(D|\theta) $ is called **log likelihood** (The calculus is easiler to work is we maximize the log of it. 而且加log不影响函数的单调性).
@@ -114,7 +111,7 @@ $$ \widehat{\theta}_{MLE} = \frac{\alpha_{H}}{\alpha_{H} + \alpha_{T}}  $$
 ![](https://github.com/shirleyChou/Data-Science/blob/master/MachineLearning/Courses/CS601/picts/summary.JPG?raw=true)
 
 #### Principle2: Maximum Aposteriori Probability - 最大后验概率
-MAP: Choose parameters $ \theta $ that maximizes **Posterior** $ P(\theta|data) $.  
+MAP: Choose parameters $ \theta $ that maximizes **Posterior** $ P(\theta|data)(that is most probable given prior probability and the data) $.  
 Remember to use Bayes Rule:
 $$ P(\theta|D) = \frac{P(D|\theta)P(\theta)}{P(D)} $$
 ##### In which:
@@ -147,6 +144,17 @@ $$ P(\theta) \sim Dirichlet(\beta_{1} + \alpha_{1},...,\beta_{k} + \alpha_{k}) $
 And **MAP estimate** is therefore
 $$ \widehat{\theta}_{i}^{MAP} = \frac{(\alpha_{i}+\beta_{i}-1)}{\sum_{j=1}^{k}(\alpha_{i}+\beta_{i}-1)}  $$
 
+
+#### Conjugate prior(共轭先验)
+In **Bayesian probability theory**, $ P(\theta) $ is the conjugate prior for likelihood function $ P(data|\theta) $ if $ P(\theta) $ and $ P(\theta | data) $ have the same form. 
+
+##### For Binomial, Cconjugate prior is Beta distribution
+![](https://github.com/shirleyChou/Data-Science/blob/master/MachineLearning/Courses/CS601/picts/Binomial.JPG?raw=true)
+
+##### For Multinomial, conjugate prior is Dirichlet distribution
+![](https://github.com/shirleyChou/Data-Science/blob/master/MachineLearning/Courses/CS601/picts/Multinomial.JPG?raw=true)
+
+##### Reference
 http://www.cs.cmu.edu/~tom/10701_sp11/slides/MLE_MAP_1-18-11-ann.pdf
 http://www.52nlp.cn/lda-math-%E8%AE%A4%E8%AF%86betadirichlet%E5%88%86%E5%B8%832
 http://maider.blog.sohu.com/306392863.html
